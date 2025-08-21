@@ -1,0 +1,99 @@
+:root{
+    --cor-fundo: #0B0A0F; /* fundo bem escuro */
+    --cor-principal: #1A1A1A; /* caixa principal */
+    --cor-secundaria: #2E0D0D; /* botões */
+    --cor-destaque: #E63946; /* vermelho sangue */
+    --cor-texto: #F5F5F5; /* branco sujo */
+    --fonte-principal: 'Times New Roman', Times, serif;
+}
+
+body {
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: var(--fonte-principal);
+    margin: 0;
+    overflow: hidden;
+}
+
+.caixa-principal{
+    background-color: var(--cor-principal);
+    width: 90%;
+    max-width: 600px;
+    text-align: center;
+    padding: 25px;
+    border: 2px solid var(--cor-destaque);
+    border-radius: 15px;
+    box-shadow: 0 0 30px var(--cor-destaque);
+    animation: fadeIn 1s ease-in;
+}
+
+h1{
+    color: var(--cor-destaque);
+    font-size: 2rem;
+    margin-bottom: 25px;
+    text-shadow: 2px 2px 8px black;
+    animation: pulse 2s infinite;
+}
+
+.caixa-perguntas {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    animation: fadeIn 1s ease-in;
+}
+
+button {
+    background-color: var(--cor-secundaria);
+    color: var(--cor-texto);
+    border: 2px solid var(--cor-destaque);
+    border-radius: 15px;
+    padding: 15px;
+    width: 80%;
+    margin: 10px 0;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px black;
+}
+
+button:hover{
+    background-color: var(--cor-destaque);
+    color: var(--cor-principal);
+    transform: scale(1.05) rotate(-1deg);
+    box-shadow: 0 0 20px var(--cor-destaque);
+    animation: tremor 0.3s infinite;
+}
+
+.caixa-resultado {
+    margin-top: 25px;
+    background-color: #1B0D0D;
+    padding: 20px;
+    border-radius: 10px;
+    border: 2px solid var(--cor-destaque);
+    box-shadow: 0 0 20px black;
+    font-size: 1.1rem;
+    animation: fadeIn 1.5s ease-in;
+}
+
+/* Animações */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+    0% { text-shadow: 2px 2px 8px black; }
+    50% { text-shadow: 2px 2px 15px black; }
+    100% { text-shadow: 2px 2px 8px black; }
+}
+
+@keyframes tremor {
+    0% { transform: translate(1px, 1px) rotate(-1deg); }
+    25% { transform: translate(-1px, 2px) rotate(1deg); }
+    50% { transform: translate(1px, -1px) rotate(0deg); }
+    75% { transform: translate(-1px, 2px) rotate(1deg); }
+    100% { transform: translate(1px, -1px) rotate(-1deg); }
+}
